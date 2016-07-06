@@ -45,7 +45,7 @@
   <div id="g">
     <div class="container">
       <div class="row">
-        <h3>GUIDES</h3>
+        <h3>GUIDE</h3>
         <div class="col-lg-2"></div>
         <div class="col-lg-8">
         </div>
@@ -56,12 +56,10 @@
           <h4><%= @guide.nickname %></h4>
           <h5><i><%= @guide.title %></i></h5>
           <p><%= @guide.comment %></p>
-          <p>
-            <a href="#" class="btn btn-chat">Ley's Chat</a>
+
 <!--               <a href="index.html#"><i class="icon-facebook"></i></a>
             <a href="index.html#"><i class="icon-twitter"></i></a>
             <a href="index.html#"><i class="icon-envelope"></i></a> -->
-          </p>
         </div>
 <!--
         <div class="col-lg-3 team">
@@ -106,6 +104,24 @@
     </div><!-- /container -->
   </div><!-- /g -->
 
+  <!-- ========== SERVICES - GREY SECTION ========== -->
+  <section id="services" name="services"></section>
+  <div id="dg">
+    <div class="container">
+      <div class="row">
+        <h3><bold>Chat List</bold></h3>
+          <% @rooms.each do |room| %>
+            <div class="col-lg-3">
+              <%= link_to "■ #{room.name}", "/rooms/show/#{room.id}" %>
+            </div>
+          <% end %>
+          <br>
+          <a href="/rooms/show" class="btn btn-chat">New Chat</a>
+            <%#= link_to "Ley's Chat", rooms_show_path, class:"btn btn-chat" %>
+      </div>
+
+    <!-- </div>/container -->
+  <!-- </div>/ -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

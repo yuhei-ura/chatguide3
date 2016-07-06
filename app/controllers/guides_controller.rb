@@ -11,6 +11,7 @@ class GuidesController < ApplicationController
   # GET /guides/1.json
   def show
     @guide = Guide.find(params[:id])
+    @rooms = Room.where(guide: params[:id])
   end
 
   # GET /guides/new
