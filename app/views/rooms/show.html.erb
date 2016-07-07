@@ -1,12 +1,38 @@
 <h2>Chat room</h2>
 <h3>＜<%= @room.name %>＞</h3>
 <br>
-
 <div id="messages">
   <%= render @messages %>
 </div>
 
-<form>
-  <label>コメント:</label><br>
+<%= form_for :message, data:{behavior:"room_speaker"}, remote: true, id: 'messages-form' do |f| %>
+  <%= f.text_field :content %>
+  <%= f.submit 'Submit' %>
+  <%= f.hidden_field :user_id, :value => "#{current_user.id}" %>
+<% end %>
+
+<!-- <form>
+  <label>Comment:</label><br>
   <input type="text" data-behavior="room_speaker">
-</form>
+</form> -->
+
+<nav class="menu" id="theMenu">
+  <div class="menu-wrap">
+<!--     <h1 class="logo"><a href="index.html#home">Chat Guide</a></h1>
+    <i class="icon-remove menu-close"></i>
+    <a href="#home" class="smoothScroll">Home</a>
+    <a href="#services" class="smoothScroll">Services</a>
+    <a href="#portfolio" class="smoothScroll">Portfolio</a>
+    <a href="#about" class="smoothScroll">About</a>
+    <a href="#contact" class="smoothScroll">Contact</a> -->
+<!--       <a href="#"><i class="icon-facebook"></i></a>
+    <a href="#"><i class="icon-twitter"></i></a>
+    <a href="#"><i class="icon-dribbble"></i></a>
+    <a href="#"><i class="icon-envelope"></i></a> -->
+  </div>
+  <!-- Menu button -->
+  <div id="menuToggle">
+  <!-- <i class="icon-reorder"></i> -->
+   <a href="#">log in</a>
+  </div>
+</nav>
