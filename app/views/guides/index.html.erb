@@ -17,7 +17,12 @@
     <!-- Menu button -->
     <div id="menuToggle">
     <!-- <i class="icon-reorder"></i> -->
-     <a href="#">log in</a>
+    <li>
+    <%= link_to "login", new_user_session_path, method: :get %>
+    <%#= link_to "logout", destroy_user_session_path, method: :delete %>
+    <%#= link_to "新規登録", new_user_registration_path, method: :get %>
+    </li>
+     <!-- <a href="#">log in</a> -->
     </div>
   </nav>
   <!-- ========== HEADER SECTION ========== -->
@@ -200,7 +205,7 @@
             <h4><%= guide.nickname %></h4>
             <h5><i><%= guide.title %></i></h5>
             <p>
-              <a href="rooms/show" class="btn btn-chat">Let's Chat</a>
+              <a href="guides/<%= guide.id %>" class="btn btn-chat">Check!</a>
 <!--               <a href="index.html#"><i class="icon-facebook"></i></a>
               <a href="index.html#"><i class="icon-twitter"></i></a>
               <a href="index.html#"><i class="icon-envelope"></i></a> -->
@@ -208,7 +213,7 @@
           </div>
           </a>
         <% end %>
-<!-- 
+<!--
         <div class="col-lg-3 team">
           <img class="img-circle" src="assets/team02.jpg" height="90" width="90">
           <h4>Brad Casey</h4>

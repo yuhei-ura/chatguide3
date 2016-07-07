@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :guides
   root 'guides#index'
   get 'rooms/show/:id' => 'rooms#show'
