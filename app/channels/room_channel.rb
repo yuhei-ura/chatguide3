@@ -10,11 +10,11 @@ class RoomChannel < ApplicationCable::Channel
 
 
   def speak(data)
-    if data[user_id].nil?
-      Message.create(content: data[:content], user_id: "1")
-    else
-      Message.create! content: data['message'], user_id: data[:user_id]
-    end
-    # Message.create! content: data['message']
+    # if data[user_id].nil?
+    #   Message.create(content: data[:content], user_id: "1")
+    # else
+    #   Message.create! content: data['message'], user_id: data[:user_id]
+    # end
+    Message.create! content: data['message']
   end
 end
